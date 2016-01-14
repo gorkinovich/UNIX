@@ -1,0 +1,46 @@
+#-----------------------------------------------------------------------#
+# 2. Abra tres terminales con la misma identificación de usuario.       #
+# Ejecute órdenes en los diferentes terminales. Indique que diferencia  #
+# advierte al ejecutar ps y ps -u <nombre del usuario> en cada          #
+# uno de ellos. Lance un listado recursivo desde uno de ellos. Pruebe   #
+# a matarlo desde otro terminal.                                        #
+#-----------------------------------------------------------------------#
+$ ps
+  PID TTY          TIME CMD
+ 6140 pts/10   00:00:00 bash
+26693 pts/10   00:00:00 sleep
+26762 pts/10   00:00:00 sleep
+26820 pts/10   00:00:00 sleep
+26858 pts/10   00:00:00 sleep
+26900 pts/10   00:00:00 sleep
+26952 pts/10   00:00:00 sleep
+27018 pts/10   00:00:00 sleep
+27387 pts/10   00:00:00 ps
+
+$ ps -u a012457
+  PID TTY          TIME CMD
+ 6133 ?        00:00:00 sshd
+ 6140 pts/10   00:00:00 bash
+ 6751 ?        00:00:00 smbmount
+21445 ?        00:00:00 sshd
+21447 pts/21   00:00:00 bash
+21967 ?        00:00:00 smbmount
+25238 pts/21   00:00:00 sleep
+25314 pts/21   00:00:00 sleep
+25364 pts/21   00:00:00 sleep
+25396 pts/21   00:00:00 sleep
+25435 pts/21   00:00:00 sleep
+25478 pts/21   00:00:00 sleep
+26693 pts/10   00:00:00 sleep
+26762 pts/10   00:00:00 sleep
+26820 pts/10   00:00:00 sleep
+26858 pts/10   00:00:00 sleep
+26900 pts/10   00:00:00 sleep
+26952 pts/10   00:00:00 sleep
+27018 pts/10   00:00:00 sleep
+30857 pts/10   00:00:00 ps
+
+$ ls -R / >/dev/null 2>/dev/null&
+[1] 4957
+
+$ kill -s 9 4957

@@ -1,0 +1,98 @@
+1)
+	mkdir dir1 dir2
+	mkdir dir1/tmp
+	cd /
+	rm -r ~/dir1 ~/dir2
+
+2)
+	cd /tmp
+	ls
+	ls /bin
+	ls /bin/n*
+
+3)
+	cd
+	ls /*s
+	ls /usr/bin/?m*
+
+4)
+	mkdir dir
+	cd /tmp
+	cp /etc/passwd ~/dir
+	chmod u -rx ~/dir/passwd --> error por falta de permisos, lo copiamos en el home para hacerlo
+	mv ~/sir/passwd /home
+	chmod u -rx /home/passwd
+
+5)
+	cat /etc/passwd /etc/group
+
+6)
+	mv /usr/bin/cmp ~
+	Permisos denegados de lectura y escritura
+
+7)
+	cd /tmp
+	cp /home/borrar ~/alumno.borrar
+	chmod u -w ~/alumno.borrar
+
+8)
+	cd
+	cp /home/borrar dir
+	rm dir/* --> Borra el fichero borrar
+	mv /home/borrar dir --> mueve borra de /home a dir
+	cp dir/borrar dir/otro --> copia borrar cambiandole de nombre a otro
+ 
+9)
+	ls -t ../..
+
+10)
+	mkdir pista
+	chmod 777 pista
+
+11)
+	cat > words
+	sort -r words > words.sort
+
+12)
+	who > usu
+
+13)
+	pr -m usu > usu1
+
+14)
+	ls -l .bash_profile --> -rwx------
+
+15)
+	head .bash_profile
+	tail .bash_profile
+
+16)
+	wc -l .bash_profile
+
+17)
+	pr -n --colums=2 .bash_profile
+
+18)
+	cat .bash_profile|grep MANPATH
+
+19)
+	cd . --> directorio actual
+	cd .. --> directorio padre
+	cd / --> directorio raíz
+	cd $HOME --> directorio de conexión
+
+20)
+	echo $HOME --> /home/alumno/a022509
+	echo $LOGNAME --> a022509
+	echo $PATH --> /usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games
+	echo $PS1 --> \u@\h:\w\$
+	echo $TERM --> xterm
+
+21)
+	PS1="\u@\h:\w\Dime:"
+
+22)
+	cat > cmds
+	ls -la
+	(Ctrl + D)
+	sh < cmds > dir.dat --> ejecuta el comando ls -la y guarda el resultado en dir.dat
